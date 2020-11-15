@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoBot.Client", "TodoBot.Client\TodoBot.Client.csproj", "{BAD17955-F8BF-41E5-B54C-D10C8D608A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoBot.Client", "TodoBot.Client\TodoBot.Client.csproj", "{BAD17955-F8BF-41E5-B54C-D10C8D608A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoBot.Shared", "TodoBot.Shared\TodoBot.Shared.csproj", "{D28B0F57-2C21-4168-9443-9A347C253A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoBot.Server", "TodoBot.Server\TodoBot.Server.csproj", "{78804BFB-0474-4AAB-B612-828D514075EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BAD17955-F8BF-41E5-B54C-D10C8D608A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAD17955-F8BF-41E5-B54C-D10C8D608A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAD17955-F8BF-41E5-B54C-D10C8D608A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D28B0F57-2C21-4168-9443-9A347C253A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D28B0F57-2C21-4168-9443-9A347C253A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D28B0F57-2C21-4168-9443-9A347C253A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D28B0F57-2C21-4168-9443-9A347C253A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78804BFB-0474-4AAB-B612-828D514075EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78804BFB-0474-4AAB-B612-828D514075EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78804BFB-0474-4AAB-B612-828D514075EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78804BFB-0474-4AAB-B612-828D514075EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

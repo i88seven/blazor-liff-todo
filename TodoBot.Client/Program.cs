@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using System.Text;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using LineDC.Liff;
+using Microsoft.Extensions.Configuration;
+using System.Net.Http;
 
 namespace TodoBot.Client
 {
@@ -16,9 +16,15 @@ namespace TodoBot.Client
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
+            var appSettings = builder.Configuration.Get<AppSettings>();
 
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
+            builder.Services.AddSingleton(new HttpClient
+            {
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+            });
+            builder.Services.AddSingleton<ILiffClient>(serviceProvider => {
+                return new LiffClient(appSettings.LiffId);
+            });
             await builder.Build().RunAsync();
         }
     }

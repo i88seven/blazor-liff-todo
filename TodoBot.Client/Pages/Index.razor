@@ -1,7 +1,26 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
+@inject ILiffClient Liff
 
-<h1>Hello, world!</h1>
+<h1>Hello, World!</h1>
+Welcometo your new app.
+<Alert Message="@ErrorMessage" AlertType="danger"></Alert>
 
-Welcome to your new app.
+@code{
+    string ErrorMessage { get; set; }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (!await Liff.InitializeAsync(JSRuntime))
+            {
+                return;
+            }
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.ToString();
+        }
+    }
+}
