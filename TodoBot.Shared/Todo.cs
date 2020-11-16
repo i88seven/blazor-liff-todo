@@ -16,6 +16,7 @@ namespace TodoBot.Shared
         /// <summary>
         /// タイトル
         /// </summary>
+        [Required(ErrorMessage ="タイトルを入力してください。")]
         public string Title { get; set; }
 
         /// <summary>

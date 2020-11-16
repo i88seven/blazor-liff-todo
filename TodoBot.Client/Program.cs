@@ -25,6 +25,11 @@ namespace TodoBot.Client
             builder.Services.AddSingleton<ILiffClient>(serviceProvider => {
                 return new LiffClient(appSettings.LiffId);
             });
+
+            builder.Services.AddSingleton<ITodoClient>(serviceProvider => {
+                var httpClient = serviceProvider.GetRequiredService<HttpClient>();
+                return new TodoClient(httpClient, appSettings?.FunctionUrl);
+            });
             await builder.Build().RunAsync();
         }
     }
